@@ -53,6 +53,18 @@ class Model_Lapak extends CI_Model
         return $this->db->get_where($this->_table, ["kd_lapak" => $id])->result();
     }
 
+       public function getByIdKatalog($id)
+    {
+        //$this->db->select('tabel_lapak.*, tabel_peminjaman.kd_pengguna as kd');
+        $this->db->from('tabel_lapak');
+        $this->db->join('tabel_pengguna', 'tabel_pengguna.kd_pengguna = tabel_lapak.kd_pengguna');
+        $this->db->where('tabel_lapak.kd_lapak', $id);
+        $query = $this->db->get();
+        return $query->result();
+        //return $this->db->get_where($this->_table, ["kd_lapak" => $id])->result();
+
+    }
+
     public function getById2($id)
     {
         return $this->db->get_where($this->_table, ["kd_pengguna" => $id])->result();

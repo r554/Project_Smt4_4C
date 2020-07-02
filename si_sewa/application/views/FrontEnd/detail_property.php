@@ -76,8 +76,7 @@
                             <h4></h4>
                         </div>
                         <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-success btn-sm">Chat Pelapak</button>
-                            <button type="button" class="btn btn-success btn-sm">Kunjungi Pelapak</button>
+                            <a href="https://api.whatsapp.com/send?phone=<?php echo $data['0']->no_pengguna ?>" class="btn btn-success" style="margin-left: 140px;">Chat Pelapak</a>
                         </div>
 
                     </div>
