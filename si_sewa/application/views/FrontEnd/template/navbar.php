@@ -42,10 +42,9 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTI <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="properties.html">RUMAH</a></li>
-                                <li><a href="properties-detail.html">TANAH</a></li>
-                                <li><a href="properties-detail.html">RUKO</a></li>
-                                <li><a href="properties-detail.html">LAIN - LAIN</a></li>
+                                <li><a href="<?= base_url('frontend/cari_rumah') ?>">RUMAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_tanah') ?>">TANAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_ruko') ?>">RUKO</a></li>
                             </ul>
                         </li>
 
@@ -73,14 +72,12 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTI <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="properties.html">RUMAH</a></li>
-                                <li><a href="properties-detail.html">TANAH</a></li>
-                                <li><a href="properties-detail.html">RUKO</a></li>
-                                <li><a href="properties-detail.html">Lain - Lain</a></li>
+                                <li><a href="<?= base_url('frontend/cari_rumah') ?>">RUMAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_tanah') ?>">TANAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_ruko') ?>">RUKO</a></li>
                             </ul>
                         </li>
-                        <li><a href="gallery.html">MITRA</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
+
                         <li><?= anchor(base_url('penyewa/tampil_akun/' . $u), ' ', array('class' => 'fa fa-exchange')) ?></li>
 
                         <li>
