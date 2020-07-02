@@ -5,7 +5,6 @@
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="<?php echo base_url() ?>assets/Frontend/img/favicon.ico" type="image/x-icon">
-
 <!-- Font awesome -->
 <link href="<?php echo base_url() ?>assets/Frontend/css/font-awesome.css" rel="stylesheet">
 <!-- Bootstrap -->

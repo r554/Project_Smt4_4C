@@ -129,6 +129,10 @@
             <br>
 
         <?php } ?>
+
+        <ul class="nav nav-pills nav-sidebar flex-column text-sm text-center">
+            <li class="nav-item"><a href="<?php echo site_url('penyewa/buat_lapak_info/' . $kd_pengguna) ?>"><button type="button" class="btn btn-block btn-outline-primary btn-sm">Buat Lapak</button></a></li>
+        </ul>
         <ul class="nav nav-pills nav-sidebar flex-column text-sm text-center">
             <li class="nav-item"><a href="<?php echo site_url() ?>auth/logout"><button type="button" class="btn btn-block btn-outline-success btn-sm">Logout</button></a></li>
         </ul>
