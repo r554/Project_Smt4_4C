@@ -45,14 +45,14 @@
                 <li class="nav-item">
                     <a href="<?php echo site_url(); ?>admin/postingan" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>Daftar Postingan</p>
+                        <p>Verifikasi Postingan</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?php echo site_url(); ?>admin/verifikasi_postingan" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>Verifikasi Postingan</p>
+                        <p>Daftar Postingan</p>
                     </a>
                 </li>
 

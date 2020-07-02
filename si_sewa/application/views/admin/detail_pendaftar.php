@@ -74,24 +74,7 @@
                                 <?= anchor(base_url('admin/hapusPenyewa/' . $penyewa[0]->kd_pengguna), ' Tolak', array('class' => 'btn btn-danger')) ?>
                             </div>
                         </div>
-                    
-
-                        <div class="col-lg-6"> 
-                            <div class="card">
-                                <div class="card-header bg-success">
-                                    <div class="card-title">
-                                        Foto Pemilik
-                                    </div>
-                                </div>
-                                    <div class="card-body">
-                                    <div class="form">
-                                        <label>NIK</label>
-                                        <input type="text" name="nik" value="" style="width: 100%;">
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+        
                     </div>
 
                 </div>

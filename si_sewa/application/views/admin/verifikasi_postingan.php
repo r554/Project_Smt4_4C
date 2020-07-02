@@ -33,7 +33,7 @@
                     <!-- Disini Taruh Content nya -->
                     <div class="card">
                       <div class="card-header bg-secondary">
-                        <h3 class="text-white">Verifikasi Postingan</h3>
+                        <h3 class="text-white">daftar Postingan</h3>
                       </div>
                       <div class="card-body text-center">
                         <table class="table table-hover table-bordered">
