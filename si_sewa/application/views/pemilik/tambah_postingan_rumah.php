@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label>Harga Sewa Pertahan</label>
+                                                <label>Harga Sewa Pertahun</label>
                                                 <input type="text" class="form-control" placeholder="Rp"
                                                     name="harga_sewa_pertahun" id="rupiah">
                                             </div>
@@ -151,7 +151,7 @@
                                 <!-- form start -->
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Gambar Tanah</label>
+                                        <label for="exampleInputFile">Gambar Rumah</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" id="exampleInputFile"
