@@ -89,7 +89,7 @@
                                 <div class="aa-double-submit">
                                     <a href="<?php echo site_url() ?>welcome/index"><input type="button" value="Batal" class="btn btn-danger" name="submit"></a>
                                     <input type="submit" value="Login" class="btn btn-success" name="submit">
-                                    <p>Anda Belum Punya Akun? <a href="register.html">DAFTAR SEKARANG!</a></p>
+                                    <p>Anda Belum Punya Akun? <a href="<?php echo site_url('welcome/daftar'); ?>">DAFTAR SEKARANG!</a></p>
                                 </div>
                             </form>
                         </div>

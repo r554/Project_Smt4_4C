@@ -53,10 +53,26 @@ class PropertiModel extends CI_Model
         return $this->db->get_where($this->_table, ["kd_properti" => $id])->row();
     }
 
+    function get_no_invoice()
+    {
+        $q = $this->db->query("SELECT MAX(RIGHT(kd_properti,4)) AS kd_max FROM tabel_properti WHERE DATE(tanggal)=CURDATE()");
+        $kd = "";
+        if ($q->num_rows() > 0) {
+            foreach ($q->result() as $k) {
+                $tmp = ((int) $k->kd_max) + 1;
+                $kd = sprintf("%04s", $tmp);
+            }
+        } else {
+            $kd = "0001";
+        }
+        date_default_timezone_set('Asia/Jakarta');
+        return date('dmy') . $kd;
+    }
+
     public function save()
     {
         $post = $this->input->post();
-        $this->kd_properti = uniqid();
+        $this->kd_properti = $post["kd_properti"];
         $this->nik_pemilik = $post["nik_pemilik"];
         $this->kd_jenis = $post["kd_jenis"];
         $this->judul_postingan = $post["judul_postingan"];

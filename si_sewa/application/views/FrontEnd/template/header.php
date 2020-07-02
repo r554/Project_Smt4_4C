@@ -5,8 +5,6 @@
                 <div class="aa-header-area">
                     <div class="row">
 
-
-
                         <?php
                         // Cek role user
                         if (!$this->session->userdata('username')) { // Jika role-nya admin

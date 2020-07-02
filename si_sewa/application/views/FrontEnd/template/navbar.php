@@ -11,7 +11,7 @@
                 </button>
                 <!-- LOGO -->
                 <!-- Text based logo -->
-                <a class="navbar-brand aa-logo" href="index.html"> Lapak <span>Properti</span></a>
+                <a class="navbar-brand aa-logo" href="<?= base_url(); ?>frontend/index"> Lapak <span>Properti</span></a>
                 <!-- Image based logo -->
                 <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
             </div>
@@ -20,9 +20,25 @@
                     <!-- Mengecek Kondisi Apakah Terdapat Session Atau Tidak -->
                     <?php
                     // Cek role user
-                    if (!$this->session->userdata('username')) { // Jika sudah bisa mendapatkan session
+                    if (!$this->session->userdata('role')) { // Jika sudah bisa mendapatkan session
                     ?>
-                        <li class="active"><a href="index.html">HOME</a></li>
+                        <li class="active"><a href="<?= base_url(); ?>frontend/index">HOME</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTI <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?= base_url('frontend/cari_rumah') ?>">RUMAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_tanah') ?>">TANAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_ruko') ?>">RUKO</a></li>
+                            </ul>
+                        </li>
+
+                    <?php
+                    } else if ($this->session->userdata('role') == 'pemilik') { // Jika role-nya pemilik
+                    ?>
+                        <?php $u = $this->session->userdata('kd_pengguna'); ?>
+
+
+                        <li class="active"><a href="<?= base_url(); ?>frontend/index">HOME</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTI <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -32,21 +48,62 @@
                                 <li><a href="properties-detail.html">LAIN - LAIN</a></li>
                             </ul>
                         </li>
-                        <li><a href="gallery.html">MITRA</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                        <li><a href="<?php echo site_url() ?>welcome/profil">PROFIL</a></li>
+
+                        <li><a href="<?= base_url('pemilik/index/' . $u) ?>"><i class="fa fa-gear"></i> Kelola Lapak</a></li>
+                        <li>
+
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('username') ?>
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <?php $u = $this->session->userdata('kd_pengguna'); ?>
+                                    <li><a href="<?php echo base_url('penyewa/tampil_profil/' . $u) ?>">Pengaturan Profil</a></li>
+                                    <li><a href="<?php echo site_url() ?>auth/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
 
                     <?php
-                    } else { // Jika role-nya operator
+                    } else if ($this->session->userdata('role') == 'penyewa') { // Jika role nya penyea
                     ?>
-                        <li class="active"><a href="index.html">HOME</a></li>
+                        <?php $u = $this->session->userdata('kd_pengguna'); ?>
+
+                        <li class="active primary"><a href="#">Buat Lapak</a></li>
+                        <li><a href="index.html">HOME</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTI <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="properties.html">RUMAH</a></li>
                                 <li><a href="properties-detail.html">TANAH</a></li>
                                 <li><a href="properties-detail.html">RUKO</a></li>
-                                <li><a href="properties-detail.html">LAIN - LAIN</a></li>
+                                <li><a href="properties-detail.html">Lain - Lain</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.html">MITRA</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><?= anchor(base_url('penyewa/tampil_akun/' . $u), ' ', array('class' => 'fa fa-exchange')) ?></li>
+
+                        <li>
+
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('username') ?>
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Akun</a></li>
+                                    <li><a href="<?php echo site_url() ?>auth/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    <?php
+                    } else { // Jika role nya admin
+                    ?>
+                        <li class="active"><a href="index.html">HOME</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTI <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?= base_url('frontend/cari_rumah') ?>">RUMAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_tanah') ?>">TANAH</a></li>
+                                <li><a href="<?= base_url('frontend/cari_ruko') ?>">RUKO</a></li>
                             </ul>
                         </li>
                         <li><a href="gallery.html">MITRA</a></li>
@@ -55,13 +112,13 @@
                         <li>
 
                             <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('username') ?>
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('role') ?>
                                     <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Akun</a></li>
                                     <?php $u = $this->session->userdata('id'); ?>
-                                    <li><?php echo anchor('crud/tampil_akun/' . $u, 'Properti Anda'); ?></li>
-                                    <li><a href="<?php echo site_url() ?>auth/logout">Logout</a></li>
+
+                                    <li><a href="<?php echo site_url() ?>auth/logout">Log</a></li>
                                 </ul>
                             </div>
                         </li>

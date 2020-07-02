@@ -2,84 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Sewa Properti</title>
-    <?php $this->load->view('pemilik/template/head'); ?>
+    <?php $this->load->view('penyewa/template/head') ?>
 </head>
 
-<body style="background-color: #f5eef8;">
-    <?php $this->load->view('pemilik/template/navbar'); ?>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3">
-                <ul class="list-group list-group-flush">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <?php $this->load->view('penyewa/template/navbar') ?>
+        <!-- /.navbar -->
 
-                    <li class="list-group-item list-group-item-action text-center"><button class="btn btn-outline-success" type="submit" style="width: 250px;">Tambah Properti</button></li>
-                    <li class="list-group-item list-group-item-action"><a href="<?php echo site_url() ?>welcome/properti_anda">Pengaturan Akun</a></li>
-                    <li class="list-group-item list-group-item-action"><a href="<?php echo site_url() ?>welcome/daftar_postingan">Daftar Postingan</a></li>
-                    <li class="list-group-item list-group-item-action">Data Penyewa</li>
-                </ul>
+        <!-- Main Sidebar Container -->
+        <?php $this->load->view('penyewa/template/sidebar') ?>
+        <!-- /.Sidebar -->
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h4 class="m-0 text-dark">Daftar Postingan</h4>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v2</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
+            <!-- /.content-header -->
 
-            <div class="col-sm-9">
-                <div class="card">
-                    <div class="card-header">
-                        Daftar Postingan
-                    </div>
-                    <div class="card-body">
-                        <div class="container">
-                            <?php
-                            $k = $this->uri->segment(3);
-                            echo anchor('welcome/tambah_postingan/' . $k, 'Tambah Postingan');
-                            ?>
-                            <!--<input type="button" class="btn btn-primary" value="Tambah Postingan">-->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Daftar Postingan Anda</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered text-center">
+                                        <thead>
+                                            <tr class="bg-dark">
+                                                <th style="width: 8px">NO</th>
+                                                <th>Judul Postingan</th>
+                                                <th style="width: 140px">Jenis Property</th>
+                                                <th>Alamat</th>
+                                                <th>Harga</th>
+                                                <th>Tanggal Posting</th>
+                                                <th style="width: 110px" class="bg-secondary">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <?php
+                                        $kd_pengguna = $this->uri->segment(3);
+                                        ?>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($lapak as $u) {
 
+                                        ?>
+                                            <tbody>
 
-                            <table class="table table-hover table-bordered">
-                                <thead>
-                                    <tr class="table-success text-center">
-                                        <th scope="col" style="width: 20px;">No</th>
-                                        <th scope="col">Judul Postingan</th>
-                                        <th scope="col">Alamat Lokasi Properti</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <?php
-                                $no = 1;
-                                foreach ($user as $u) {
+                                                <tr>
+                                                    <td><?php echo $no++ ?></td>
+                                                    <td><?php echo $u->Judul_postingan; ?></td>
+                                                    <td><?php echo $u->kd_jenis; ?></td>
+                                                    <td><?php echo $u->alamat_lokasi; ?></td>
+                                                    <td><?php echo $u->harga_sewa_pertahun; ?></td>
+                                                    <td><?php echo $u->tanggal; ?></td>
+                                                    <td>
+                                                        <a href="<?= base_url('pemilik/edit_daftar_postingan/' . $kd_pengguna) ?>"><button class="btn btn-block btn-success btn-sm">Edit</button></a>
 
-                                ?>
-                                    <tbody>
-
-                                        <tr>
-                                            <th scope="row" class="text-center"><?php echo $no++ ?></th>
-                                            <td><?php echo $u->Judul_postingan; ?></td>
-                                            <td><?php echo $u->kd_properti; ?></td>
-                                            <td>
-                                                <?php echo anchor('crud/edit_postingan/' . $u->kd_properti, 'Edit'); ?>
-                                                <?php echo anchor('crud/delete_postingan/' . $u->kd_properti, 'Hapus'); ?>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                <?php } ?>
-                            </table>
-
+                                                        <a href="<?= base_url('pemilik/hapus_daftar_postingan/' . $u->kd_lapak . '/' . $kd_pengguna) ?>" class="btn btn-block btn-danger btn-sm" role="button">Hapus</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        <?php } ?>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer clearfix">
+                                    <ul class="pagination pagination-sm m-0 float-right">
+                                        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
 
                         </div>
-
                     </div>
+
+
+
+
                 </div>
-            </div>
+                <!--/. container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        <?php $this->load->view('penyewa/template/footer'); ?>
+        <!-- / Main Footer -->
+
     </div>
+    <!-- ./wrapper -->
 
-
-
-
-    <?php $this->load->view('pemilik/template/js'); ?>
+    <!-- REQUIRED SCRIPTS -->
+    <?php $this->load->view('penyewa/template/js'); ?>
 </body>
 
 </html>
