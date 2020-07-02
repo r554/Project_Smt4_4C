@@ -42,7 +42,7 @@
                         <div class="col-md-9">
                             <div class="card card-primary">
                                 <div class="card-header text-danger">
-                                    <h3 class="card-title ">Data Rumah</h3>
+                                    <h3 class="card-title ">Data Ruko</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <?php
@@ -50,7 +50,9 @@
                                 $kd_pengguna1 = $this->uri->segment(3);
                                 ?>
                                 <!-- form start -->
-                                <form role="form" action="<?= base_url('pemilik/save_postingan_ruko/' . $kd_pengguna1) ?>" method="POST">
+                                <form role="form"
+                                    action="<?= base_url('pemilik/save_postingan_ruko/' . $kd_pengguna1) ?>"
+                                    method="POST">
                                     <input type="text" name="kd_lapak" id="" value="<?= $invoice; ?>">
                                     <input type="text" name="kd_pengguna" id="" value="<?= $kd_pengguna1; ?>">
                                     <input type="text" name="kd_jenis" id="" value="<?= $kd_jenis; ?>">
@@ -65,11 +67,13 @@
                                             <div class="form-group col-md-6">
                                                 <label>Harga Sewa
                                                 </label>
-                                                <input type="text" class="form-control" placeholder="Rp" name="harga_sewa_pertahun">
+                                                <input type="text" class="form-control" placeholder="Rp"
+                                                    name="harga_sewa_pertahun">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Alamat</label>
-                                                <textarea type="password" class="form-control" name="alamat_lokasi"></textarea>
+                                                <textarea type="password" class="form-control"
+                                                    name="alamat_lokasi"></textarea>
                                             </div>
                                         </div>
 
@@ -109,7 +113,8 @@
 
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Deskripsi"></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                                name="Deskripsi"></textarea>
                                         </div>
 
                                         <div class="form-check">
