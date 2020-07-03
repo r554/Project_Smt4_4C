@@ -48,6 +48,10 @@
                                         <input type="text" name="harga_sewa_pertahun" value="<?= $postingan[0]->harga_sewa_pertahun; ?>" style="width: 100%;">
                                     </div>
                                     <div class="form">
+                                        <label>Harga Sewa Perbulan</label>
+                                        <input type="text" name="harga_sewa_perbulan" value="<?= $postingan[0]->harga_sewa_perbulan; ?>" style="width: 100%;">
+                                    </div>
+                                    <div class="form">
                                         <label>Alamat Lokasi</label>
                                         <input type="text" name="alamat_lokasi" value="<?= $postingan[0]->alamat_lokasi; ?>" style="width: 100%;">
                                     </div>

@@ -60,6 +60,11 @@
                     </a>
                 </li>
                 <?php
+                if ($this->session->userdata('role') == 'penyewa') { // Jika sudah bisa mendapatkan session
+                ?>
+                    <li class="nav-item"><a href="<?= base_url('penyewa/buat_lapak_info/' . $kd_pengguna) ?>"><button type="button" class="btn btn-block btn-outline-primary btn-sm">Buat Lapak</button></a></li>
+                <?php } ?>
+                <?php
                 // Cek role user
                 if ($this->session->userdata('role') == 'pemilik') { // Jika sudah bisa mendapatkan session
                 ?>
@@ -129,10 +134,6 @@
             <br>
 
         <?php } ?>
-
-        <ul class="nav nav-pills nav-sidebar flex-column text-sm text-center">
-            <li class="nav-item"><a href="<?php echo site_url('penyewa/buat_lapak_info/' . $kd_pengguna) ?>"><button type="button" class="btn btn-block btn-outline-primary btn-sm">Buat Lapak</button></a></li>
-        </ul>
         <ul class="nav nav-pills nav-sidebar flex-column text-sm text-center">
             <li class="nav-item"><a href="<?php echo site_url() ?>auth/logout"><button type="button" class="btn btn-block btn-outline-success btn-sm">Logout</button></a></li>
         </ul>

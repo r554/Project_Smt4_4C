@@ -135,9 +135,14 @@ class Pemilik extends CI_Controller
         $validation->set_rules($model->rules());
 
         if ($validation->run()) {
-            $model->save();
+            $model->save_ruko();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data["user"] = $model1->tampil_data($id);
+
+            $data = [
+                "user" => $model1->tampil_data($id),
+                "lapak" => $this->Model_Lapak->getById2($id),
+            ];
+
             $this->load->view("pemilik/daftar_postingan", $data);
         }
     }

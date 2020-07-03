@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('penyewa/template/head') ?>
+    <?php
+
+    use PhpParser\Node\Stmt\Echo_;
+
+    $this->load->view('penyewa/template/head') ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -27,7 +31,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v2</li>
+                                <li class="breadcrumb-item active">Transaksi Sewa</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -55,7 +59,7 @@
                                             <tr>
                                                 <th style="width: 8px">NO</th>
                                                 <th>Judul Postingan</th>
-                                                <th style="width: 140px">Jenis Property</th>
+                                                <th style="width: 140px">Jenis Properti</th>
                                                 <th>Alamat</th>
                                                 <th>Status Sewa</th>
                                                 <th style="width: 110px">Aksi</th>
@@ -82,11 +86,19 @@
                                                             Detail</a>
                                                     </td>
 
+
+
+                                                </tr>
+                                                <tr>
+
                                                 </tr>
 
                                             </tbody>
                                         <?php } ?>
                                     </table>
+                                    <?php
+                                    if (!isset($u)) echo 'Anda Belum Memiliki Transaksi Sewa';
+                                    ?>
                                 </div>
 
                             </div>
@@ -110,7 +122,7 @@
                                             <tr>
                                                 <th style="width: 8px">NO</th>
                                                 <th>Judul Postingan</th>
-                                                <th style="width: 140px">Jenis Property</th>
+                                                <th style="width: 140px">Jenis Properti</th>
                                                 <th>Alamat</th>
                                                 <th>Status Sewa</th>
                                                 <th style="width: 110px">Aksi</th>
@@ -142,6 +154,9 @@
                                             </tbody>
                                         <?php } ?>
                                     </table>
+                                    <?php
+                                    if (!isset($id)) echo 'Anda Tidak Mempunyai Transaksi Sewa. Untuk Menyewa Anda bisa Mencari Pada Katalog';
+                                    ?>
                                 </div>
                             </div>
                         </div>

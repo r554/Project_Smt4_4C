@@ -82,7 +82,7 @@
                         <div class="col-4">
                             <div class="card card-primary card-outline">
                                 <div class="card-body box-foto">
-                                    <h3 class="profile-username font-weight-light text-center ">Foto Property</h3>
+                                    <h3 class="profile-username font-weight-light text-center ">Foto Properti</h3>
 
                                     <div class="card-body">
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -93,7 +93,7 @@
                                             </ol>
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
-                                                    <img class="d-block w-100" src="https://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+                                                    <img class="d-block w-100" src="<?= base_url() ?>assets/Gambar/foto1/<?php echo $hasil['0']->foto1 ?>" alt="First slide">
                                                 </div>
                                                 <div class="carousel-item">
                                                     <img class="d-block w-100" src="https://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">

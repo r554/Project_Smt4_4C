@@ -34,7 +34,7 @@ class Frontend extends MY_Controller
     public function detail_properti($id)
     {
         $product = $this->Model_Lapak;
-        $data["data"] = $product->getByIdKatalog($id);
+        $data["data"] = $product->getkatalog($id);
         $this->load->view('frontEnd/detail_property', $data);
     }
 

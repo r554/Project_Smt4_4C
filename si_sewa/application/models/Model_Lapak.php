@@ -53,16 +53,14 @@ class Model_Lapak extends CI_Model
         return $this->db->get_where($this->_table, ["kd_lapak" => $id])->result();
     }
 
-       public function getByIdKatalog($id)
+    public function getkatalog($id)
     {
-        //$this->db->select('tabel_lapak.*, tabel_peminjaman.kd_pengguna as kd');
         $this->db->from('tabel_lapak');
         $this->db->join('tabel_pengguna', 'tabel_pengguna.kd_pengguna = tabel_lapak.kd_pengguna');
         $this->db->where('tabel_lapak.kd_lapak', $id);
         $query = $this->db->get();
         return $query->result();
         //return $this->db->get_where($this->_table, ["kd_lapak" => $id])->result();
-
     }
 
     public function getById2($id)
@@ -374,6 +372,131 @@ class Model_Lapak extends CI_Model
     }
 
     function do_upload_kepemilikan_rumah()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/surat_kepemilikan';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name']            = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('surat_kepemilikan');
+        $result7 = $this->upload->data('file_name');
+        return $result7;
+    }
+
+    public function save_ruko()
+    {
+        $post = $this->input->post();
+        $this->kd_lapak = $post["kd_lapak"];
+        $this->kd_jenis = $post["kd_jenis"];
+        $this->kd_pengguna = $post["kd_pengguna"];
+        $this->Judul_postingan = $post["Judul_postingan"];
+        $this->harga_sewa_pertahun = $post["harga_sewa_pertahun"];
+        $this->jumlah_kamar_mandi = $post["jumlah_kamar_mandi"];
+        $this->jumlah_kamar_tidur = $post["jumlah_kamar_tidur"];
+        $this->luas_bangunan = $post["luas_bangunan"];
+        $this->luas_tanah = $post["luas_tanah"];
+        $this->sumber_air = $post["sumber_air"];
+        $this->daya_listrik = $post["daya_listrik"];
+        $this->alamat_lokasi = $post["alamat_lokasi"];
+        $this->foto1 = $this->do_upload_ruko1();
+        $this->foto2 = $this->do_upload_ruko2();
+        $this->foto3 = $this->do_upload_ruko3();
+        $this->foto4 = $this->do_upload_ruko4();
+        $this->foto5 = $this->do_upload_ruko5();
+        $this->Deskripsi = $post["Deskripsi"];
+        $this->surat_PBB = $this->do_upload_pbb_ruko();
+        $this->surat_kepemilikan = $this->do_upload_kepemilikan_ruko();
+
+        return $this->db->insert($this->_table, $this);
+    }
+
+    function do_upload_ruko1()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/foto1';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name'] = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('foto1');
+        $result1 = $this->upload->data('file_name');
+        return $result1;
+    }
+
+    function do_upload_ruko2()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/foto2';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name']            = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('foto2');
+        $result2 = $this->upload->data('file_name');
+        return $result2;
+    }
+
+    function do_upload_ruko3()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/foto3';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name']            = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('foto3');
+        $result3 = $this->upload->data('file_name');
+        return $result3;
+    }
+
+    function do_upload_ruko4()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/foto4';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name']            = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('foto4');
+        $result4 = $this->upload->data('file_name');
+        return $result4;
+    }
+
+    function do_upload_ruko5()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/foto5';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name']            = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('foto5');
+        $result5 = $this->upload->data('file_name');
+        return $result5;
+    }
+
+    function do_upload_pbb_ruko()
+    {
+        // setting konfigurasi upload
+        $config['upload_path'] = './assets/Gambar/surat_pbb';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name']            = 'item-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('surat_pbb');
+        $result6 = $this->upload->data('file_name');
+        return $result6;
+    }
+
+    function do_upload_kepemilikan_ruko()
     {
         // setting konfigurasi upload
         $config['upload_path'] = './assets/Gambar/surat_kepemilikan';

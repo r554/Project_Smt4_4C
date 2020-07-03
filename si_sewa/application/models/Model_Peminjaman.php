@@ -92,15 +92,46 @@ class Model_Peminjaman extends CI_Model
 
     public function getById7($id = null)
     {
-        $status1 = "Disewa";
+        $statusnya = "Disewa";
         //$this->db->select('tabel_peminjaman.kd_pengguna as kd, tabel_lapak.kd_pengguna as kd_pengguna1');
         $this->db->from('tabel_peminjaman');
         $this->db->join('tabel_lapak', 'tabel_lapak.kd_lapak = tabel_peminjaman.kd_lapak');
         //$this->db->join('tabel_pengguna', 'tabel_pengguna.kd_pengguna = tabel_peminjaman.kd_pengguna');
         $this->db->join('tabel_jenis', 'tabel_jenis.kd_jenis = tabel_lapak.kd_jenis');
         $this->db->where('tabel_peminjaman.kd_pengguna', $id);
-        $this->db->where('tabel_peminjaman.status_penyewaan', $status1);
+        $this->db->where('tabel_peminjaman.status_penyewaan', $statusnya);
         $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function getById77($id = null)
+    {
+        $statusnya = "Tertunda";
+        //$this->db->select('tabel_peminjaman.kd_pengguna as kd, tabel_lapak.kd_pengguna as kd_pengguna1');
+        $this->db->from('tabel_peminjaman');
+        $this->db->join('tabel_lapak', 'tabel_lapak.kd_lapak = tabel_peminjaman.kd_lapak');
+        //$this->db->join('tabel_pengguna', 'tabel_pengguna.kd_pengguna = tabel_peminjaman.kd_pengguna');
+        $this->db->join('tabel_jenis', 'tabel_jenis.kd_jenis = tabel_lapak.kd_jenis');
+        $this->db->where('tabel_peminjaman.kd_pengguna', $id);
+        $this->db->where('tabel_peminjaman.status_penyewaan', $statusnya);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function getdisewa($id = null)
+    {
+        $statusnya = "Disewa";
+        //$this->db->select('tabel_peminjaman.kd_pengguna as kd, tabel_lapak.kd_pengguna as kd_pengguna1');
+        $this->db->from('tabel_peminjaman');
+        $this->db->join('tabel_lapak', 'tabel_lapak.kd_lapak = tabel_peminjaman.kd_lapak');
+        //$this->db->join('tabel_pengguna', 'tabel_pengguna.kd_pengguna = tabel_peminjaman.kd_pengguna');
+        $this->db->join('tabel_jenis', 'tabel_jenis.kd_jenis = tabel_lapak.kd_jenis');
+        $this->db->where('tabel_peminjaman.kd_pengguna', $id);
+        $this->db->where('tabel_peminjaman.status_penyewaan', $statusnya);
+        $query = $this->db->get();
+
         return $query->result();
     }
 

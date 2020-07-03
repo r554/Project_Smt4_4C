@@ -43,6 +43,7 @@ class Model_postingan extends CI_model
 
     public function getVerifikasi()
     {
+        $verifikasi = 'verifikasi';
         return $this->db->get_where($this->_table, ["status_postingan" => '1'])->result();
     }
 
@@ -51,10 +52,8 @@ class Model_postingan extends CI_model
     {
     	//$this->db->where('kd_pengguna', $id);
     	//$this->db->delete('tabel_pengguna');
-        //return $this->db->get_where($this->_table, ["status_postingan" => '5'])->result();
-        $this->db->where('kd_lapak', $id);
-        $this->db->update('tabel_lapak', ['status_postingan' => '2']);
-    	//return $this->db->delete($this->_table, array("kd_lapak" => $id));
+
+    	return $this->db->delete($this->_table, array("kd_lapak" => $id));
     }
 
     public function getPostinganById($id)

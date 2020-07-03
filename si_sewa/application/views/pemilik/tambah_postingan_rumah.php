@@ -38,15 +38,13 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <div class="row">
-                        <?php
-                        $kd_jenis = 2;
-                        $kd_pengguna2 = $this->uri->segment(3);
-                        ?>
-                        <div class="col-md-8">
-                            <form role="form" action="<?= base_url('pemilik/save_postingan_rumah/' . $kd_pengguna2) ?>"
-                                method="POST" enctype="multipart/form-data">
-
+                    <?php
+                    $kd_jenis = 2;
+                    $kd_pengguna2 = $this->uri->segment(3);
+                    ?>
+                    <form role="form" action="<?= base_url('pemilik/save_postingan_rumah/' . $kd_pengguna2) ?>" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-6">
                                 <div class="card card-primary">
                                     <div class="card-header text-danger">
                                         <h3 class="card-title ">Data Rumah</h3>
@@ -54,10 +52,9 @@
                                     <!-- /.card-header -->
 
                                     <!-- form start -->
-
-                                    <input type="hidden" name="kd_lapak" id="" value="<?= $invoice; ?>">
-                                    <input type="hidden" name="kd_pengguna" id="" value="<?= $kd_pengguna2; ?>">
-                                    <input type="hidden" name="kd_jenis" id="" value="<?= $kd_jenis; ?>">
+                                    <input type="hidden" name="kd_lapak" value="<?= $invoice; ?>">
+                                    <input type="hidden" name="kd_pengguna" value="<?= $kd_pengguna2; ?>">
+                                    <input type="hidden" name="kd_jenis" value="<?= $kd_jenis; ?>">
                                     <div class="card-body">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
@@ -67,14 +64,12 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label>Harga Sewa Pertahun</label>
-                                                <input type="text" class="form-control" placeholder="Rp"
-                                                    name="harga_sewa_pertahun" id="rupiah">
+                                                <label>Harga Sewa Pertahan</label>
+                                                <input type="text" class="form-control" placeholder="Rp" name="harga_sewa_pertahun" id="rupiah">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Alamat</label>
-                                                <textarea type="password" class="form-control"
-                                                    name="alamat_lokasi"></textarea>
+                                                <textarea type="password" class="form-control" name="alamat_lokasi"></textarea>
                                             </div>
                                         </div>
 
@@ -118,8 +113,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                                    name="Deskripsi"></textarea>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Deskripsi"></textarea>
                                             </div>
                                         </div>
 
@@ -135,102 +129,82 @@
                                             </button>
                                         </div>
                                     </div>
-
                                 </div>
-                            </form>
-                        </div>
+                            </div>
 
-
-                        <div class="col-md-4">
-
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Gambar</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <!-- form start -->
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Gambar Rumah</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="foto1">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="foto2">>
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="foto3">>
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="foto4">>
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="foto5">>
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-
+                            <div class="col-lg-6">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Gambar</h3>
                                     </div>
-                                    <br>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Gambar Tanah</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="foto1">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="foto2">>
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="foto3">>
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="foto4">>
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="foto5">>
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Gambar Surat Bukti Bayar Pajak</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="surat_pbb">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Gambar Surat Bukti Bayar Pajak</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="surat_pbb">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Gambar Surat Bukti Kepemilikan</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="surat_kepemilikan">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose
+                                                        file</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Gambar Surat Bukti Kepemilikan</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile"
-                                                    name="surat_kepemilikan">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
-
                             </div>
                         </div>
-                    </div>
-
+                    </form>
 
                 </div>
                 <!--/. container-fluid -->
@@ -255,7 +229,6 @@
                                     </h3>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -269,30 +242,30 @@
 
         <!-- Script Untuk Membuat Format Rupiah -->
         <script type="text/javascript">
-        var rupiah = document.getElementById('rupiah');
-        rupiah.addEventListener('keyup', function(e) {
-            // tambahkan 'Rp.' pada saat form di ketik
-            // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-            rupiah.value = formatRupiah(this.value, 'Rp. ');
-        });
+            var rupiah = document.getElementById('rupiah');
+            rupiah.addEventListener('keyup', function(e) {
+                // tambahkan 'Rp.' pada saat form di ketik
+                // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+                rupiah.value = formatRupiah(this.value, 'Rp. ');
+            });
 
-        /* Fungsi formatRupiah */
-        function formatRupiah(angka, prefix) {
-            var number_string = angka.replace(/[^,\d]/g, '').toString(),
-                split = number_string.split(','),
-                sisa = split[0].length % 3,
-                rupiah = split[0].substr(0, sisa),
-                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+            /* Fungsi formatRupiah */
+            function formatRupiah(angka, prefix) {
+                var number_string = angka.replace(/[^,\d]/g, '').toString(),
+                    split = number_string.split(','),
+                    sisa = split[0].length % 3,
+                    rupiah = split[0].substr(0, sisa),
+                    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-            // tambahkan titik jika yang di input sudah menjadi angka ribuan
-            if (ribuan) {
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
+                // tambahkan titik jika yang di input sudah menjadi angka ribuan
+                if (ribuan) {
+                    separator = sisa ? '.' : '';
+                    rupiah += separator + ribuan.join('.');
+                }
+
+                rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+                return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
             }
-
-            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
-        }
         </script>
         <!-- / Script Untuk Membuat Format Rupiah -->
 

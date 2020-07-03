@@ -48,6 +48,10 @@
                                         <input type="text" name="harga_sewa_pertahun" value="<?= $verifikasi[0]->harga_sewa_pertahun; ?>" style="width: 100%;">
                                     </div>
                                     <div class="form">
+                                        <label>Harga Sewa Perbulan</label>
+                                        <input type="text" name="harga_sewa_perbulan" value="<?= $verifikasi[0]->harga_sewa_perbulan; ?>" style="width: 100%;">
+                                    </div>
+                                    <div class="form">
                                         <label>Alamat Lokasi</label>
                                         <input type="text" name="alamat_lokasi" value="<?= $verifikasi[0]->alamat_lokasi; ?>" style="width: 100%;">
                                     </div>
@@ -86,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <?= anchor(base_url('admin/hapusVerifikasi/' . $verifikasi[0]->kd_lapak), ' Hapus', array('class' => 'btn btn-danger')) ?>
+                                <?= anchor(base_url('admin/hapusVerifikasi/' . $verifikasi[0]->kd_lapak), ' Tolak', array('class' => 'btn btn-danger')) ?>
                             </div>
                         </div>
                     </div>

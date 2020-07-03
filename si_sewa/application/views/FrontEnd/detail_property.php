@@ -72,11 +72,12 @@
                         <div class="text-center">
                             <img src=" <?= base_url() ?>assets/logo/kk.png " class="card-img-center rounded-circle" alt="Cinque Terre" width="200" height="150">
                         </div>
+
+
                         <div class="text-center">
-                            <h4></h4>
-                        </div>
-                        <div class="modal-footer justify-content-between">
-                            <a href="https://api.whatsapp.com/send?phone=<?php echo $data['0']->no_pengguna ?>" class="btn btn-success" style="margin-left: 140px;">Chat Pelapak</a>
+                            <li class="modal-footer justify-content-between "><a href="https://api.whatsapp.com/send?phone=<?php echo $data['0']->no_pengguna ?> ">Chat
+                                    Pelapak</a></li>
+
                         </div>
 
                     </div>

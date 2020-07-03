@@ -7,9 +7,9 @@
 
 <body class="aa-price-range">
     <!-- Pre Loader -->
-    <!-- <div id="aa-preloader-area">
+    <div id="aa-preloader-area">
         <div class="pulse"></div>
-    </div> -->
+    </div>
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
     <!-- END SCROLL TOP BUTTON -->
@@ -38,82 +38,7 @@
                         <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>Jember, Indonesia (ID)</p>
                         <span class="aa-top-slider-off">Discount 30% OFF</span>
                         <p class="aa-top-slider-price">Rp.500.000</p>
-                        <a href="#" class="aa-top-slider-btn">Selengkapnya <span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                    <!-- / Top slider content -->
-                </div>
-                <!-- / Top slider single slide -->
-                <!-- Top slider single slide -->
-                <div class="aa-top-slider-single">
-                    <img src="<?php echo base_url() ?>assets/Frontend/img/slider/q.jpg" alt="img">
-                    <!-- Top slider content -->
-                    <div class="aa-top-slider-content">
-                        <span class="aa-top-slider-catg">Duplex</span>
-                        <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-                        <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-                        <span class="aa-top-slider-off">30% OFF</span>
-                        <p class="aa-top-slider-price">$460,000</p>
-                        <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                    <!-- / Top slider content -->
-                </div>
-                <!-- / Top slider single slide -->
-                <!-- Top slider single slide -->
-                <div class="aa-top-slider-single">
-                    <img src="img/slider/1.jpg" alt="img">
-                    <!-- Top slider content -->
-                    <div class="aa-top-slider-content">
-                        <span class="aa-top-slider-catg">Duplex</span>
-                        <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-                        <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-                        <span class="aa-top-slider-off">30% OFF</span>
-                        <p class="aa-top-slider-price">$460,000</p>
-                        <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                    <!-- / Top slider content -->
-                </div>
-                <!-- / Top slider single slide -->
-                <!-- Top slider single slide -->
-                <div class="aa-top-slider-single">
-                    <img src="img/slider/5.jpg" alt="img">
-                    <!-- Top slider content -->
-                    <div class="aa-top-slider-content">
-                        <span class="aa-top-slider-catg">Duplex</span>
-                        <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-                        <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-                        <span class="aa-top-slider-off">30% OFF</span>
-                        <p class="aa-top-slider-price">$460,000</p>
-                        <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                    <!-- / Top slider content -->
-                </div>
-                <!-- / Top slider single slide -->
-                <!-- Top slider single slide -->
-                <div class="aa-top-slider-single">
-                    <img src="img/slider/4.jpg" alt="img">
-                    <!-- Top slider content -->
-                    <div class="aa-top-slider-content">
-                        <span class="aa-top-slider-catg">Duplex</span>
-                        <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-                        <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-                        <span class="aa-top-slider-off">30% OFF</span>
-                        <p class="aa-top-slider-price">$460,000</p>
-                        <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                    <!-- / Top slider content -->
-                </div>
-                <!-- / Top slider single slide -->
-                <!-- Top slider single slide -->
-                <div class="aa-top-slider-single">
-                    <img src="img/slider/6.jpg" alt="img">
-                    <!-- Top slider content -->
-                    <div class="aa-top-slider-content">
-                        <span class="aa-top-slider-catg">Duplex</span>
-                        <h2 class="aa-top-slider-title">1560 Square Feet</h2>
-                        <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p>
-                        <span class="aa-top-slider-off">30% OFF</span>
-                        <p class="aa-top-slider-price">$460,000</p>
-                        <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+                        <!-- <a href="#" class="aa-top-slider-btn">Selengkapnya <span class="fa fa-angle-double-right"></span></a> -->
                     </div>
                     <!-- / Top slider content -->
                 </div>
@@ -219,7 +144,7 @@
                                         </div>
                                         <div class="aa-properties-detial">
                                             <span class="aa-price">
-                                                <?php echo $u->harga_sewa_pertahun; ?>
+                                                <?php echo $u->harga_sewa_pertahun; ?><h5><b>/Tahun</b></h5>
                                             </span>
                                             <a href="<?= base_url('frontend/detail_properti/' . $u->kd_lapak) ?>" class="aa-secondary-btn">Selengkapnya</a>
                                         </div>

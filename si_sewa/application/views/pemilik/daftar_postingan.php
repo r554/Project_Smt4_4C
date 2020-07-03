@@ -27,7 +27,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v2</li>
+                                <li class="breadcrumb-item active">Daftar Postingan</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -48,7 +48,7 @@
                                 <div class="card-body">
                                     <table class="table table-bordered text-center">
                                         <thead>
-                                            <tr class="bg-dark">
+                                            <tr>
                                                 <th style="width: 8px">NO</th>
                                                 <th>Judul Postingan</th>
                                                 <th style="width: 140px">Jenis Property</th>
@@ -111,11 +111,6 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
 
         <!-- Main Footer -->
         <?php $this->load->view('penyewa/template/footer'); ?>

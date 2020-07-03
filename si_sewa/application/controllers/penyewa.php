@@ -19,6 +19,7 @@ class Penyewa extends CI_Controller
         $this->load->view('penyewa/index', $data);
     }
 
+
     public function tampil_akun($id = null)
     {
         if (!isset($id)) redirect('welcome/index');
@@ -30,6 +31,7 @@ class Penyewa extends CI_Controller
         $this->load->view("penyewa/index", $data);
     }
 
+    // Sesi Fitur Profil ================================================================
     public function tampil_profil($id = null)
     {
         if (!isset($id)) redirect('welcome/index');
@@ -40,6 +42,28 @@ class Penyewa extends CI_Controller
 
         $this->load->view("penyewa/profil", $data);
     }
+
+
+    public function edit_profil($id = null)
+    {
+        if (!isset($id)) redirect('frontend');
+
+        $product = $this->Model_Pengguna;
+        $validation = $this->form_validation;
+        $validation->set_rules($product->rules());
+
+        if ($validation->run()) {
+            $product->edit_profil();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["user"] = $product->tampil_data($id);
+        if (!$data["user"]) show_404();
+
+        //$this->load->view("penyewa/profil", $data);
+    }
+
+    // ==================================================================================
 
     public function detail_sewa($id)
     {
@@ -127,7 +151,7 @@ class Penyewa extends CI_Controller
         $data = [
             "user" => $product->tampil_data($id),
             "hasil" => $this->Model_Peminjaman->getById6($id),
-            "hasil1" => $this->Model_Peminjaman->getById7($id),
+            "hasil1" => $this->Model_Peminjaman->getdisewa($id),
 
         ];
 
@@ -157,10 +181,11 @@ class Penyewa extends CI_Controller
         $product = $this->Model_Pengguna;
         $data = [
             "user" => $product->tampil_data($id),
-            "hasil" => $this->Model_Peminjaman->getById7($id),
-            "hasil1" => $this->Model_Detail_Peminjaman->getById3($id2),
+            "hasil" => $this->Model_Peminjaman->getById77($id),
+            //"hasil1" => $this->Model_Detail_Peminjaman->getById3($id2),
             "invoice" => $this->Model_Detail_Peminjaman->get_no_invoice(),
         ];
+
 
         $this->load->view("penyewa/detail_sewa_pending", $data);
     }
